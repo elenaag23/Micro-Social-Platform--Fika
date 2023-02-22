@@ -1,0 +1,369 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.fontbun {
+    font-family: serif,'Franklin Gothic';
+}
+
+.culoarebuna {
+    color: #F4694A;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.culoaresus {
+    background-color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 18px;
+    color: white;
+}
+
+.culoaresus2 {
+    background-color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 18px;
+    color: white;
+    width:100%;
+}
+
+.w {
+    width: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.culoarebuton {
+    background-color: white;
+    color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 18px;
+}
+
+.culoarebuton3 {
+    background-color: white;
+    color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 18px;
+    border-color: #F4694A;
+    height:auto;
+}
+
+.culoarebuton4 {
+    background-color: #FFCBA4;
+    color: #F4694A;
+    border-color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 20px;
+}
+
+.culoarebuton4:hover{color:white;}
+
+.culoarebuton5 {
+    background-color: white;
+    color: #F4694A;
+    border-color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 17px;
+}
+
+.culoarebuton2 {
+    background-color: white;
+    color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 21px;
+}
+
+.btn{
+    width:auto;
+    height:auto;
+    text-align:center;
+}
+
+.btn2 {
+    background-color: #F4694A;
+    color: white;
+    border-color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 20px;
+    width:200px;
+    height:40px;
+    text-align:center;
+    margin:auto;
+    text-decoration:solid;
+}
+
+.culoarebuton6 {
+    background-color: white;
+    color: #F4694A;
+    border-color: white;
+    font-family: serif,'Franklin Gothic';
+    font-size: 50px;
+    justify-content: end;
+}
+
+    .culoarebuton6:hover {
+        color: #FFCBA4;
+    }
+
+
+.alert-success2 {
+    color: white;
+    background-color: #FFCBA4;
+    border-color: #badbcc;
+}
+
+.card-header2 > a {
+    color: #F4694A;
+}
+
+    .card-header2 > a:hover {
+        color: white;
+    }
+
+    .card-header2 > a:not([href]):not([class]), a:not([href]):not([class]):hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+.culoarebuton7 {
+    background-color: white;
+    color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 40px;
+}
+
+.add > a {
+    color: #F4694A;
+}
+
+    .add > a:hover {
+        color: #FFCBA4;
+    }
+
+    .add > a:not([href]):not([class]), a:not([href]):not([class]):hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+.card-header4 {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: #FFCBA4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    text-align: center;
+    font-size:20px;
+    text-decoration:none;
+}
+
+.card-header4>hover{
+    color:white;
+}
+
+.card-header9 {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: #FFCBA4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    text-align: left;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+    .card-header4 > hover {
+        color: white;
+    }
+
+.card-header5 {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: white;
+    border: 2px solid;
+    border-color: #F4694A;
+    text-align: center;
+}
+
+.card-header2 {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: #FFCBA4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    color: #F4694A;
+}
+
+
+.card2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    text-align: left;
+}
+
+.card3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.pad {
+    padding-left: 100px;
+}
+
+.marg {
+    margin-right: 100px;
+}
+
+.badge2 {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background-color: #F4694A;
+}
+
+
+
+
+
+
+
+
+.grid-line1 {
+    border-right: 3px solid;
+    border-color: #FFCBA4;
+    height: auto;
+    width: 60px;
+}
+
+.grid-line2 {
+    border-left: 3px solid;
+    border-color: #FFCBA4;
+    height: auto;
+    width: 60px;
+}
+
+.scroll {
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.inalt {
+    height: 700px;
+}
+
+
+
+.container2 {
+    border: 1px solid;
+    border-color: #F4694A;
+    width: 780px;
+    margin-left: 250px;
+}
+
+.card-header3 {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: #FFCBA4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    color: #F4694A;
+    display: inline;
+    width:50rem;
+    float:inherit;
+    font-size:14px;
+}
+
+
+    .card-header3 > a {
+        color: #F4694A;
+    }
+
+.container4 {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    border: solid;
+    border-color: #FFCBA4;
+}
+
+.culoarebuton8 {
+    background-color: white;
+    color: #F4694A;
+    font-family: serif,'Franklin Gothic';
+    font-size: 18px;
+    border-color: black;
+    border-width: 1.5px;
+}
+
+.ground {
+    display: inline-block;
+}
+
+.marg2 {
+    margin-left: 0px;
+}
+
+
+.containergrup {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2px;
+    margin: 16px 16px 16px 16px;
+}
+
+.cellgrup {
+    padding: 10px;
+    width: 30%;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin: 16px 16px 16px 16px;
+}
+
+.spann {
+    background-color: #FFCBA4;
+}
+
+.culoarebuton9 {
+    background-color: #FFCBA4;
+    color: white;
+    font-family: serif,'Franklin Gothic';
+    font-size: 18px;
+}

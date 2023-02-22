@@ -1,0 +1,21 @@
+﻿@model MS_Fika.Models.Profile
+
+@{
+    ViewBag.Title = "Profil";
+}
+
+<div class="jumbotron">
+    <div class="cont">
+        <a href="/Profiles/New">Add your own profile right now</a>
+    </div>
+</div>
+
+@foreach (MS_Fika.Models.Profile profile in ViewBag.Profiles)
+{
+    <div class="card">
+        <a class="btn btn-success" href="/Profiles/Show/@profile.ProfileId">Afisare profil</a>
+    </div>
+
+}
+
+

@@ -1,0 +1,296 @@
+﻿@model MS_Fika.Models.Group
+
+@{
+    ViewBag.Title = "Afisare grup";
+}
+
+@if (ViewBag.Message != null)
+{
+    <h2 class="card-header4 p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2>
+}
+<br />
+
+<div class="d-flex culoarebuton flex-row justify-content-between p-3 border-1 border-top">
+    <a class="btn culoaresus fontbun d-flex justify-content-start w-20 h-25" href="/Groups/Members/@Model.GroupId">Membri</a>
+
+    <div class="container d-flex justify-content-between">
+
+    </div>
+    @if (ViewBag.EsteInGrup == 0)
+    {
+        <a class="btn culoaresus2 fontbun d-flex justify-content-end h-25" href="/Groups/Join/@Model.GroupId">Intra!</a>
+    }
+    @if (ViewBag.EsteInGrup == 1 && Model.GroupAdminId != ViewBag.UserCurent)
+    {
+         <a class="btn culoaresus fontbun d-flex justify-content-end  w-20 h-25" href="/Groups/Leave/@Model.GroupId">Paraseste</a>
+    }
+</div>
+
+@*
+
+<div class="d-flex justify-content-start">
+            <a class="btn culoaresus fontbun" href="/Groups/Members/@Model.GroupId">Membri</a>
+ </div>
+
+<div class="d-flex justify-content-end">
+    @if (ViewBag.EsteInGrup == 0)
+    {
+        <div class="go-right">
+            <a class="btn culoaresus fontbun" href="/Groups/Join/@Model.GroupId">Alatura-te</a>
+        </div>
+    }
+    @if (ViewBag.EsteInGrup == 1 && Model.GroupAdminId != ViewBag.UserCurent)
+    {
+        <div class="go-right">
+            <a class="btn culoaresus fontbun" href="/Groups/Leave/@Model.GroupId">Iesi din grup</a>
+        </div>
+    }
+
+</div>
+
+*@
+    
+
+<div class="card3">
+
+    <div class="card2">
+        <div class="card-header5">
+
+            <div class="d-flex justify-content-end ">
+
+                <span class="d-flex justify-content-end culoarebuna fontbun">@Model.GroupDate.ToLongDateString()</span>
+
+            </div>
+
+            <div class="d-block fw-bold fontbun culoarebuna"><h2>@Model.GroupName</h2></div>
+            <div class=" fontbun culoarebuna card-subtitle d-block mb-2 text-muted center-block"><h6>@Model.Description</h6></div>
+
+           
+
+        </div>
+
+    @if (ViewBag.AfisareButoane == true && Model.GroupAdminId == ViewBag.UserCurent || ViewBag.EsteAdmin)
+    {
+        <div class="d-flex flex-row justify-content-between p-3 border-1 border-top">
+
+                <a class="btn culoarebuton3" href="/Groups/Edit/@Model.GroupId">Editeaza grupul</a>
+
+                <form method="post" action="/Groups/Delete/@Model.GroupId">
+
+                    <button class="btn culoarebuton3" type="submit">Sterge grupul</button>
+
+                </form>
+
+        </div>
+    }
+
+</div>
+
+@* Afisare postare impreuna cu butoanele de editare si stergere *@
+    @if (ViewBag.EsteInGrup == 1)
+    {
+        @foreach (var post in Model.Posts)
+        {
+
+            <div class="container2 d-flex justify-content-center flex-row mt-3 fontbun">
+                <div class=" text-bg-blue mb-3" style="width: 45rem;">
+                    <div class="card-header3 row rounded-2">
+
+                        <strong><i class="bi bi-person"></i>@post.User.UserName</strong>
+
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+                        <div class="container d-inline">
+                        </div>
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <div class="container d-inline">
+                        </div>
+
+                        <span class="col-md-4">@post.PostDate.ToLongDateString()</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">@post.PostContent</p>
+
+                        <a class="btn culoaresus d-flex justify-content-center text-light" href="/Posts/Show/@post.PostId">Afisare postare</a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+        }
+
+
+    }
+
+
+    <br />
+
+        @*
+
+        @foreach (var post in Model.Posts)
+        {
+
+                <div class="container2 d-flex justify-content-center flex-row mt-3 fontbun">
+                    <div class=" text-bg-blue mb-3" style="width: 45rem;">
+                        <div class="card-header3 row rounded-2">
+
+                            <strong><i class="bi bi-person"></i>@post.User.UserName</strong>
+
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+                            <div class="container d-inline">
+                            </div>
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <div class="container d-inline">
+                            </div>
+
+                            <span class="col-md-4">@post.PostDate.ToLongDateString()</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">@post.PostContent</p>
+
+                            <a class="btn culoaresus d-flex justify-content-center text-light" href="/Posts/Show/@post.PostId">Afisare postare</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+            }
+
+
+        }
+
+
+        <br />
+
+        *@
+
+
+ @if(ViewBag.EsteInGrup==1)
+ {
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-2"></div>
+
+                <div class="col-md-8">
+
+                    <div class="card">
+
+                        <form method="post" action="/Groups/Show/@Model.GroupId">
+
+                            <div class="card-body">
+
+                                <input type="hidden" name="GroupId" value="@Model.GroupId" />
+
+                                <label>Continut postare</label>
+                                <br />
+
+                                <textarea class="form-control" name="PostContent"></textarea>
+
+                                @Html.ValidationMessage("PostContent","", new { @class = "text-danger"})
+
+                                <br /><br />
+
+                                <button class="btn culoarebuton3 " type="submit">Adauga postarea</button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-2"></div>
+
+            </div>
+            @*
+        <div style="font-family: 'Audiowide', cursive;" class="container text-center notInGroup">
+        <h2> Nu faci parte din acest grup! </h2>
+        <a style="        background-color: #36b4e8; color: black" class="btn btn-success btn" href="/Groups/Join/@Model.GroupId">Intra in grup</a>
+        </div>
+        *@
+
+        </div>
+ }
+
+        
+        
+    
+    

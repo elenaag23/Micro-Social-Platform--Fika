@@ -1,0 +1,44 @@
+﻿@model MS_Fika.Models.Post
+
+@{
+    ViewBag.Title = "Postare noua";
+}
+
+
+<h2 class="text-center mt-5">Adaugare postare</h2>
+<br />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 offset-3">
+
+            @using (Html.BeginForm(actionName: "New", controllerName: "Posts",
+            method: FormMethod.Post))
+            {
+                @Html.ValidationSummary(false, "", new{@class="text-danger"})
+
+                <br />
+
+                @Html.Label("PostContent", "Continut Postare")
+                <br />
+                @Html.TextArea("PostContent", null, new { @class = "form-control" })
+
+                @Html.ValidationMessage("PostContent", null, new { @class = "text-danger" })
+                <br />
+
+                <br />
+
+                <button class="btn culoaresus" type="submit">Adauga articol</button>
+
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

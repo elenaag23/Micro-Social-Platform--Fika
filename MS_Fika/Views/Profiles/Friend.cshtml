@@ -1,0 +1,19 @@
+﻿@model MS_Fika.Models.Profile
+
+@{
+    ViewBag.Title = "Lista de prieteni";
+}
+
+<h2 class="fontbun culoarebuna">Afisare Prietenii</h2>
+@foreach (var pr in ViewBag.Prietenie)
+{
+    <div class=" d-flex marg flex-row justify-content-between">
+        <h2 class="row m-3 pad d-flex fontbun justify-content-between position-relative">♡ @pr.ProfileName</h2>
+        <form method="post" action="/Profiles/DeleteFriendship/@pr.UserId">
+
+            <button class="btn m-3  d-flex justify-content-between position-relative row culoarebuton3 btn-danger" type="submit"><i class="bi bi-trash3"></i></button>
+
+        </form>
+    </div>
+    <br />
+}

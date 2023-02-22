@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Cautare";
+}
+<h3 class="fontbun culoarebuna text-center mt-5">Introdu numele sau username-ul persoanei pe care vrei sa o cauti!</h3>
+
+<form method="GET">
+    <div class="input-group mb-3 fontbun">
+        <input type="text" class="form-control" placeholder="Nume sau username" name="search" value="@ViewBag.SearchString">
+        <button class="culoarebuton4 border-0" type="submit">Search</button>
+    </div>
+</form>
+
+@if (ViewBag.cautare == true)
+{
+    @foreach (var profil in ViewBag.profile)
+    {
+        <div class="card">
+
+            <div class="card-header9 flex-column">
+                <a class="culoarebuton4 text-decoration-none culoarebuna fontbun" href="/Profiles/Show/@profil.ProfileId">Nume profil: @profil.ProfileName</a>
+                <br>
+                <br>
+                <div class="card-subtitle col d-block mb-2 text-muted center-block fontbun"><h6>Username: @profil.ProfileUsername</h6></div>
+            </div>
+
+
+        </div>
+    }
+}

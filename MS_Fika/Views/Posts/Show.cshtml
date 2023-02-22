@@ -1,0 +1,157 @@
+﻿
+
+
+@model MS_Fika.Models.Post
+
+@{
+    ViewBag.Title = "Afisare postare";
+}
+
+
+<br />
+
+<div class="card">
+
+    <div class="card-header2">
+        <a class="text-decoration-none culoarebuna" href="/Profiles/Show/@ViewBag.profilid"<i class="bi bi-person">@Model.User.UserName</i></a>
+        <span class="float-end">@Model.PostDate.ToLongDateString()</span>
+    </div>
+
+
+    <div id="1" class="container text-center">
+        <div id="2" class="col float-start w-50 position-relative d-block p-4 scroll inalt grid-line1">
+
+
+            <br />
+            <br />
+            <div class="row">
+                <div class="card-text">@Model.PostContent</div>
+                <br />
+                <br />
+                <br />
+            </div>
+
+            <br/>
+            <br />
+            <br />
+
+            
+
+            <div class="row d-block">
+
+
+                <div class="position-relative d-block  bottom-0 start-0">
+
+                        <form method="post" action="/Posts/Show/@Model.PostId">
+                            @*using (Html.BeginForm(actionName: "Show", controllerName: "Posts"))*@
+
+                            <div class="card-body">
+
+                                <input type="hidden" name="PostId" value="@Model.PostId" />
+
+                                <label>Continut comentariu</label>
+                                <br />
+
+                                <textarea class="form-control" name="CommentContent"></textarea>
+
+                                @Html.ValidationMessage("CommentContent","", new { @class = "text-danger"})
+
+                                <br /><br />
+
+                                <button class="btn culoarebuton3 " type="submit">Adauga comentariul</button>
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
+
+            </div>
+
+            
+             
+        </div>
+
+        
+
+        
+
+        <div class="col float-end w-50 d-block scroll inalt grid-line2">
+            @foreach (var comm in Model.Comments)
+            {
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+
+                        <div class="col-md-8">
+
+                            <div>
+
+                                <p>@comm.CommentContent</p>
+                                <small>@comm.CommentDate</small>
+                                <strong><i class="bi bi-person"></i>@comm.User.UserName</strong>
+
+                            </div>
+                            <br>
+
+
+                            @if (comm.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin)
+                            {
+
+                                <div class="d-flex justify-content-center">
+
+                                    <div>
+
+                                        <a class="btn btn-outline culoarebuton4" href="/Comments/Edit/@comm.CommentId "><i class="bi bi-pencil-square"></i>Editeaza</a>
+
+                                    </div>
+
+                                    <div>
+
+                                        <form method="post" action="/Comments/Delete/@comm.CommentId">
+
+                                            <button class="btn btn-outline culoarebuton5" type="submit"><i class="bi bi-trash"></i>Sterge</button>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            }
+
+                            <br />
+
+                        </div>
+
+                        <div class="col-md-2"></div>
+
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+
+
+ </div>
+    
+    @if (ViewBag.AfisareButoane == true && Model.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin)
+    {
+        <div class="d-flex culoarebuton flex-row justify-content-between p-3 border-1 border-top">
+
+            <a class="btn culoaresus" href="/Posts/Edit/@Model.PostId">Editeaza postare</a>
+
+            <form method="post" action="/Posts/Delete/@Model.PostId">
+
+                <button class="btn culoarebuton2 bi bi-trash3" type="submit"></button>
+
+            </form>
+
+        </div>
+    }
+
+
+@* Afisare comentarii impreuna cu butoanele de editare si stergere *@
+

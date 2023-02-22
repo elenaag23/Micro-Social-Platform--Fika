@@ -1,0 +1,66 @@
+﻿@model MS_Fika.Models.Group
+
+@{
+    ViewBag.Title = "Pagina de grupuri";
+}
+
+
+
+
+<div class="card-header4 ">
+    <h2 class="culoarebuna fontbun flex-row mt-3">Grupuri din aplicatie</h2>
+    <a class="btn culoarebuton5 " href="/Groups/New">Adauga un grup</a>
+</div>
+
+<br />
+@if (ViewBag.Message != null)
+{
+    <h2 class="card-header4 p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2>
+}
+
+<br />
+<div class="containergrup">
+    @foreach (MS_Fika.Models.Group group in ViewBag.Groups)
+    {
+
+        <div class="d-flex cellgrup justify-content-center flex-row mt-3">
+            <div class="card mb-3" style="width: 75rem;">
+                <div class="card-header2 row">
+                    <div class="fw-bold fontbun col-md-8">@group.GroupName</div>
+                    <span class=" col-md-4">@group.GroupDate.ToLongDateString()</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-text fontbun">@group.Description</p>
+
+                    <a class="btn culoaresus d-flex justify-content-center " href="/Groups/Show/@group.GroupId">Afisare postari grup</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@*
+@foreach (MS_Fika.Models.Group group in ViewBag.Groups)
+{
+    <div class="card">
+        <div class="card-body">
+
+            <div class="card-text">@group.GroupName</div>
+            <div class="card-text">@group.Description</div>
+
+            <div class="d-flex justify-content-between flex-row mt-5">
+
+                @*<div><i class="bi bi-person"></i> User(@Model.User)</div>
+
+                <span class="alert-success bg-opacity-25">@group.GroupDate</span>
+
+            </div>
+
+        </div>
+
+
+
+        <a class="d-flex justify-content-center flex-row bg-secondary text-light" href="/Groups/Show/@group.GroupId">Afisare postari grup</a>
+
+    </div>
+}
+*@

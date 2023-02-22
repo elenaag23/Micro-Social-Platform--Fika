@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 culoarebuna fontbun">Welcome to Fika</h1>
+</div>
+
+@foreach (var post in ViewBag.Posts)
+{
+    <div class="container2 d-flex justify-content-center flex-row mt-3 fontbun">
+        <div class=" text-bg-blue mb-3" style="width: 45rem;">
+            <div class="card-header3 row rounded-2">
+
+                <a class="fw-bold col-md-8 culoarebuna text-decoration-none" ">Anonim</a>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+            <div class="container d-inline">
+            </div>
+            <div class="container d-inline">
+            </div>
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <div class="container d-inline">
+            </div>
+
+            <span class="col-md-4">@post.PostDate.ToLongDateString()</span>
+        </div>
+        <div class="card-body">
+            <p class="card-text">@post.PostContent</p>
+
+            <a class="btn culoaresus d-flex justify-content-center text-light" href="/Posts/Show/@post.PostId">Afisare postare</a>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+}

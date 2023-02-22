@@ -1,0 +1,31 @@
+﻿@model MS_Fika.Models.Comment
+
+
+@{
+    ViewBag.Title = "Editare comentarii";
+}
+
+<h2 class="fontbun culoarebuna">Editare comentariu</h2>
+<br />
+
+
+@using (Html.BeginForm(controllerName: "Comments", actionName: "Edit",
+      method: FormMethod.Post, routeValues: new { id = Model.CommentId }))
+
+{
+    @Html.Label("CommentContent", "Continut comentariu", new{ @class="fontbun"})
+
+    <br />
+
+    @Html.Editor("CommentContent", new { htmlAttributes = new { @class = "form-control fontbun"}})
+    <br />
+
+    @Html.ValidationMessage("CommentContent", null, new { @class = "text-danger" })
+
+    <br />
+    <br />
+
+    <button class="btn culoaresus" type="submit">Editeaza comentariul</button>
+
+}
+

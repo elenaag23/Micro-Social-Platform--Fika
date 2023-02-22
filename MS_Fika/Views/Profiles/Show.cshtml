@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Afisare profil";
+}
+
+@model MS_Fika.Models.Profile
+
+@if (ViewBag.AfisareButoane == true && Model.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin)
+{
+    <div class="d-flex add flex-row justify-content-between p-3 border-1 border-top">
+
+        <a class="btn  culoarebuton3" href="/Profiles/Edit/@Model.ProfileId"><i class="bi bi-pencil-fill"></i></a>
+
+        <form method="post" action="/Profiles/Delete/@Model.ProfileId">
+
+            <button class="btn culoarebuton3 " type="submit"><i class="bi bi-trash3"></i></button>
+
+        </form>
+
+    </div>
+}
+
+@* Afisarea unui profil *@
+<div class="add">
+    @if (ViewBag.buton == true)
+    {
+        <a class="culoarebuton7" href="/Profiles/AddFriend/@Model.UserId"><i class="bi bi-person-plus-fill"></i></a>
+    }
+
+</div>
+
+<div class="card3">
+
+    <div class="card2">
+
+        <div class="card-header4 d-block justify-content-center ">
+            <div class="d-block fontbun culoarebuna"><h2>@Model.ProfileName</h2></div>
+            <div class=" fontbun culoarebuna card-subtitle d-block mb-2 text-muted center-block"><h6>@Model.ProfileUsername</h6></div>
+        </div>
+
+
+        @if (ViewBag.Public == true || ViewBag.prieteni == true || Model.UserId == ViewBag.UserCurent)
+        {
+            <div class="card d-flex justify-content-start ">
+
+                <span class="badge2 badge-pill justify-content-start d-flex ">Despre mine</span>
+
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>@Model.ProfileBio</p>
+                    </blockquote>
+                </div>
+            </div>
+
+
+            @foreach (var post in ViewBag.Posts)
+            {
+                @if (post.GroupId == null)
+                {
+                    <div class="container2 d-flex justify-content-center flex-row mt-3 fontbun">
+                        <div class="text-bg-blue mb-3" style="width: 45rem;">
+                            <div class="card-header3 row rounded-2">
+
+                              <a class="fw-bold col-md-8 text-decoration-none" href="/Profiles/Show/@Model.ProfileId">@Model.User.UserName</a>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <div class="container d-inline">
+                                </div>
+
+                                <span class="col-md-4">@post.PostDate.ToLongDateString()</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">@post.PostContent</p>
+
+                                <a class="btn culoaresus d-flex justify-content-center text-light" href="/Posts/Show/@post.PostId">Afisare postare</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                }
+            }
+
+        }
+
+       
+
+            @*<div class="card-text">@Model.ProfilePublic</div>*@
+
+
+
+        
+
+
+
+ 
+        @*
+        @foreach (MS_Fika.Models.Group group in ViewBag.Groups)
+        {
+
+
+            <div class="d-flex justify-content-center flex-row mt-3">
+                <div class="card text-bg-blue mb-3" style="width: 45rem;">
+                    <div class="card-header row">
+                        <div class="fw-bold col-md-8">@group.GroupName</div>
+                    </div>
+                    <div class="card-body">
+
+                        <a class="btn bg-dark bg-opacity-75 d-flex justify-content-center text-light" href="/Groups/Show/@group.GroupId">Afisare postari din grup</a>
+                    </div>
+                </div>
+            </div>
+        }
+        *@
+
+         @if (Model.UserId == ViewBag.UserCurent)
+            {
+                <div class="d-flex culoarebuton flex-row justify-content-between p-3 border-1 border-top">
+                <a class="btn  culoaresus  d-flex justify-content-center text-light m-3 w-50" href="/Profiles/Friend/@Model.UserId">Afiseaza prieteni</a>
+                <a class="btn  culoaresus  d-flex justify-content-center text-light m-3 w-50" href="/Profiles/Requests/">Afiseaza cereri</a>
+                </div>
+            }
+        
+</div>
+    @if (ViewBag.Public == false && ViewBag.prieteni == false && Model.UserId != ViewBag.UserCurent)
+    {
+    <h2 class="fontbun mb-5 mt-5 ml-sm-5 culoarebuna">Acest utilizator are contul privat!</h2>
+    }
+</div>

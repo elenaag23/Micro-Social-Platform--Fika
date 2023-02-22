@@ -1,0 +1,17 @@
+﻿@model MS_Fika.Models.Profile
+
+@{
+    ViewBag.Title = "Afisare profile";
+}
+
+@foreach (MS_Fika.Models.Profile profil in ViewBag.profile)
+{
+
+    <div class="d-flex justify-content-center flex-row mt-3">
+        <div class="card text-bg-blue mb-3" style="width: 75rem;">
+            <div class="card-header row">
+                <a class="fw-bold col-md-8" href="/Profiles/Show/@profil.ProfileId">@profil.ProfileName</a>
+            </div>
+        </div>
+    </div>
+}

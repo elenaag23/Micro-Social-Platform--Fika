@@ -1,0 +1,72 @@
+﻿@model MS_Fika.Models.Profile
+
+@{
+    ViewBag.Title = "Editare profil";
+}
+
+
+<h2 class="text-center mt-5">Editare profil</h2>
+<br />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 offset-3">
+
+            @using (Html.BeginForm(actionName: "Edit", controllerName: "Profiles",
+            method: FormMethod.Post))
+            {
+                @Html.ValidationSummary(false, "", new{@class="text-danger"})
+
+                <br />
+
+                @Html.Label("ProfileName", "Nume")
+                <br />
+                @Html.TextArea("ProfileName", null, new { @class = "form-control" })
+
+                @Html.ValidationMessage("ProfileName", null, new { @class = "text-danger" })
+                <br />
+
+                <br />
+
+                @Html.Label("ProfileUsername", "Username")
+                <br />
+                @Html.TextArea("ProfileUsername", null, new { @class = "form-control" })
+
+                @Html.ValidationMessage("ProfileUsername", null, new { @class = "text-danger" })
+                <br />
+
+                <br />
+
+                @Html.Label("ProfilePublic", "Public")
+                <br />
+                @Html.TextArea("ProfilePublic", null, new { @class = "form-control" })
+
+                @Html.ValidationMessage("ProfilePublic", null, new { @class = "text-danger" })
+                <br />
+
+                <br />
+
+                @Html.Label("ProfileBio", "Despre")
+                <br />
+                @Html.TextArea("ProfileBio", null, new { @class = "form-control" })
+
+                @Html.ValidationMessage("ProfileBio", null, new { @class = "text-danger" })
+                <br />
+
+                <br />
+
+                <button class="btn culoaresus" type="submit">Editeaza profil</button>
+
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
